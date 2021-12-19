@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block titulo %} Página Catalogo Genero {% endblock %}
+
+{% block contenido %}
+<h2>Catalogo Genero</h2>
+<table>
+    <tr>
+        <td><h3>Nombre Genero</h3></td>
+    </tr>
+    {% for genero in consulta_genero %}
+    <tr>
+        <td>{{genero.nombre_genero}}</td>
+        <td><a href="/eliminargenero/{{genero.id_genero}}">Eliminar</a></td>
+        <td><a href="/editargenero/{{genero.id_genero}}">Editar</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a  class="links" href="/genero">Nuevo Genero</a>
+{% endblock %}

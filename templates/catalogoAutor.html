@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block titulo %} Página Catalogo Autor {% endblock %}
+
+{% block contenido %}
+<h2>Catalogo Autor</h2>
+<table>
+    <tr>
+        <td><h3>Nombre Autor</h3></td>
+        <td><h3>Fecha Nacimiento</h3></td>
+        <td><h3>Nacionalidad</h3></td>
+    </tr>
+    {% for autor in consulta_autor %}
+    <tr>
+        <td>{{autor.nombre_autor}}</td>
+        <td>{{autor.fecha_nacimiento}}</td>
+        <td>{{autor.nacionalidad}}</td>
+        <td><a href="/eliminarautor/{{autor.id_autor}}">Eliminar</a></td>
+        <td><a href="/editarautor/{{autor.id_autor}}">Editar</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a  class="links" href="/autor">Nuevo Autor</a>
+{% endblock %}

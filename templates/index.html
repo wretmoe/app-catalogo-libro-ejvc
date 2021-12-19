@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block titulo %} Página index {% endblock %}
+
+{% block contenido %}
+
+<form class="login" action="/iniciologin" method="post">
+    <h2>Inicio de sesion</h2>
+    <label for="usuario">E-mail: </label><br>
+    <input class="controls" type="email" id="usuario" placeholder="E-mail" name="E-mail" value="">
+    <br>
+    <label for="contraseña">Contraseña: </label><br>
+    <input class="controls" type="password" id="contraseña" placeholder="Contraseña" name="password" value="">
+    <br>
+    <input class="buttons" type="submit" value="Ingresar">
+</form>
+{% endblock %}

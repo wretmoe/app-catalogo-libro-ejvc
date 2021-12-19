@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block titulo %} Página Editorial {% endblock %}
+
+{% block contenido %}
+
+<form class="login" action="/registrareditorial" method="post">
+    <h2>Agregar Editorial</h2>
+    <label for="editorialonombre">Nombre Editorial: </label><br>
+    <input class="controls" type="text" id="editorialnombre" name="nombre_editorial" value="">
+    <br>
+    <input class="buttons" type="submit" value="Registrar Editorial">
+</form>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block titulo %} Página Favoritos {% endblock %}
+
+{% block contenido %}
+<h2>Favoritos/h2>
+<table>
+    <tr>
+        <td><h3>Titulo Libro</h3></td>
+        <td><h3>Fecha Publicacion</h3></td>
+        <td><h3>Numero pag</h3></td>
+        <td><h3>Formato</h3></td>
+        <td><h3>Volumen</h3></td>
+        <td><h3>Editorial</h3></td>
+        <td><h3>Genero</h3></td>
+        <td><h3>Autor</h3></td>
+    </tr>
+    {% for favoritos in consulta_favoritos %}
+    <tr>
+        <td>{{favoritos.titulo_libro}}</td>
+        <td>{{favoritos.fecha_publicacion}}</td>
+        <td>{{favoritos.numero_paginas}}</td>
+        <td>{{favoritos.formato}}</td>
+        <td>{{favoritos.volumen}}</td>
+        <td>{{favoritos.nombre_editorial}}</td>
+        <td>{{favoritos.nombre_genero}}</td>
+        <td>{{favoritos.nombre_autor}}</td>
+        <td><a href="/eliminarlibro/{{libro.id_libro}}">Eliminar</a></td>
+        <td><a href="/editarlibro/{{libro.id_libro}}">Editar</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a  class="links" href="/libro">Nuevo Libro</a>
+{% endblock %}

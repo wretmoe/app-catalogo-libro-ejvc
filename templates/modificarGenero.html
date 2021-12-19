@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block titulo %} Página Genero {% endblock %}
+
+{% block contenido %}
+
+<form class="login" action="/modificargenero" method="post">
+    <h2>Editar Genero</h2>
+    <label for="generonombre">Nombre Genero: </label><br>
+    <input class="controls" type="text" id="nombregenero" name="nombre_genero" value="">
+    <br>
+    <input type="hidden" name="id_genero" value="{{genero.id_genero}}">
+    <input class="buttons" type="submit" value="Editar Genero">
+</form>
+{% endblock %}

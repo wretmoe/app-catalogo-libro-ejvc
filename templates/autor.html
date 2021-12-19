@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block titulo %} Página Autor {% endblock %}
+
+{% block contenido %}
+
+<form class="login" action="/registrarautor" method="post">
+    <h2>Agregar Autor</h2>
+    <label for="nombre_autor">Nombre Autor: </label><br>
+    <input class="controls" type="text" id="nombre_autor" name="nombre_autor" value="">
+    <br>
+    <label for="fecha_nacimiento">Fecha de Nacimiento: </label><br>
+    <input class="controls" type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="">
+    <br>
+    <label for="nacionalidad">Nacionalidad: </label><br>
+    <input class="controls" type="text" id="nacionalidad" name="nacionalidad" value="">
+    <br>
+    <input class="buttons" type="submit" value="Registrar Autor">
+</form>
+{% endblock %}

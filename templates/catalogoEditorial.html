@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block titulo %} Página Catalogo Editorial {% endblock %}
+
+{% block contenido %}
+<h2>Catalogo Editorial</h2>
+<table>
+    <tr>
+        <td><h3>Nombre Editorial</h3></td>
+    </tr>
+    {% for editorial in consulta_editorial %}
+    <tr>
+        <td>{{editorial.nombre_editorial}}</td>
+        <td><a href="/eliminareditorial/{{editorial.id_editorial}}">Eliminar</input></td>
+        <td><a href="/editareditorial/{{editorial.id_editorial}}">Editar</input></td>
+    </tr>
+    {% endfor %}
+</table>
+<a  class="links" href="/editorial">Nueva Editorial</a>
+{% endblock %}

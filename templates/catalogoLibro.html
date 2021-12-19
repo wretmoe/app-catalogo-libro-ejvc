@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block titulo %} Página Catalogo Libro {% endblock %}
+
+{% block contenido %}
+<h2>Catalogo Libro</h2>
+<table>
+    <tr>
+        <td><h3>Titulo Libro</h3></td>
+        <td><h3>Fecha Publicacion</h3></td>
+        <td><h3>Numero pag</h3></td>
+        <td><h3>Formato</h3></td>
+        <td><h3>Volumen</h3></td>
+        <td><h3>Editorial</h3></td>
+        <td><h3>Genero</h3></td>
+        <td><h3>Autor</h3></td>
+    </tr>
+    {% for libro in consulta_libro %}
+    <tr>
+        <td>{{libro.titulo_libro}}</td>
+        <td>{{libro.fecha_publicacion}}</td>
+        <td>{{libro.numero_paginas}}</td>
+        <td>{{libro.formato}}</td>
+        <td>{{libro.volumen}}</td>
+        <td>{{libro.nombre_editorial}}</td>
+        <td>{{libro.nombre_genero}}</td>
+        <td>{{libro.nombre_autor}}</td>
+        <td><a href="/eliminarlibro/{{libro.id_libro}}">Eliminar</a></td>
+        <td><a href="/editarlibro/{{libro.id_libro}}">Editar</a></td>
+        <td><a href="/favoritos/{{libro.id_libro}}/{{libro.id_libro}}">Favoritos</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a  class="links" href="/libro">Nuevo Libro</a>
+{% endblock %}

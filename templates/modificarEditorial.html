@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block titulo %} Página Editorial {% endblock %}
+
+{% block contenido %}
+
+<form class="login" action="/modificareditorial" method="post">
+    <h2>Editar Editorial</h2>
+    <label for="editorialonombre">Nombre Editorial: </label><br>
+    <input class="controls" type="text" id="editorialnombre" name="nombre_editorial" value="">
+    <br>
+    <input type="hidden" name="id_editorial" value="{{editorial.id_editorial}}">
+    <input class="buttons" type="submit" value="Editar Editorial">
+</form>
+{% endblock %}

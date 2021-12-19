@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block titulo %} Página Autor {% endblock %}
+
+{% block contenido %}
+
+<form class="login" action="/modificarautor" method="post">
+    <h2>Editar Autor</h2>
+    <label for="nombre_autor">Nombre Autor: </label><br>
+    <input class="controls" type="text" id="nombre_autor" name="nombre_autor" value="">
+    <br>
+    <label for="fecha_nacimiento">Fecha de Nacimiento: </label><br>
+    <input class="controls" type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="">
+    <br>
+    <label for="nacionalidad">Nacionalidad: </label><br>
+    <input class="controls" type="text" id="nacionalidad" name="nacionalidad" value="">
+    <br>
+    <input type="hidden" name="id_autor" value="{{autor.id_autor}}">
+    <input class="buttons" type="submit" value="Editar Autor">
+</form>
+{% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{% block head %}
+    <meta charset='utf-8'>
+    <title>{% block titulo %} {% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+{% endblock %}
+</head>
+<header>
+    {% block encabezado %}
+    <h1>Aplicacion Catálogo Libros</h1>
+    <table class="">
+        <tr>
+      
+          <td><a href="/leerlibro">Catalogo Libro</a></td>
+          <td><a href="/leerautor">Catalogo Autor</a></td>
+          <td><a href="/leergenero">Catalogo Genero</a></td>
+          <td><a href="/leereditorial">Catalogo Editorial</a></td>
+          <td><a href="/registrar">Registrar Usuario</a></td>
+          <td><a href="/iniciar_sesion">Login Usuario</a></td>
+
+        </tr>
+      </table>
+    {% endblock %}
+</header>
+
+{% block body %}
+<body>
+    
+    <div id="content">
+        {% block contenido %}
+        {% endblock %}
+    </div>
+
+    <div id="footer">
+        {% block piepagina %}
+        <h1>Verduzco Campos Erick Jose</h1>
+        {% endblock %}
+    </div>
+    
+</body>
+{% endblock %}
+</html>

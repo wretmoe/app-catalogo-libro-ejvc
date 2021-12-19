@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block titulo %} Página Genero {% endblock %}
+
+{% block contenido %}
+
+<form class="login" action="/registrargenero" method="post">
+    <h2>Agregar Genero</h2>
+    <label for="generonombre">Nombre Genero: </label><br>
+    <input class="controls" type="text" id="nombregenero" name="nombre_genero" value="">
+    <br>
+    <input class="buttons" type="submit" value="Registrar Genero">
+</form>
+{% endblock %}

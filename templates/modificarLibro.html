@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block titulo %} Página Libro {% endblock %}
+
+{% block contenido %}
+
+<form class="registrolibro" action="/modificarlibro" method="post">
+    <h2>Editar Libro</h2>
+    <label for="titulo">Título: </label><br>
+    <input class="controls" type="text" id="titulo" name="titulo_libro" value="">
+    <br>
+    <label for="fecha_publicacion">Fecha de Publicación: </label><br>
+    <input class="controls" type="date" id="fechapublicacion" name="fecha_publicacion" value="">
+    <br>
+    <label for="numeropaginas">Número de Páginas: </label><br>
+    <input class="controls" type="text" id="nopaginas" name="numero_paginas" value="">
+    <br>
+    <label for="formato">Formato: </label><br>
+    <input class="controls" type="text" id="formato" name="formato" value="">
+    <br>
+    <label for="volumen">Volumen: </label><br>
+    <input class="controls" type="text" id="volumen" name="volumen" value="">
+    <br>
+    <div>
+        <p>Editorial</p>
+        <select name="editorial">
+            {% for editorial in consulta_editorial %}
+                <option value="{{editorial.id_editorial}}">
+                    {{editorial.nombre_editorial}}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <p>Autor</p>
+        <select name="autor">
+            {% for autor in consulta_autor %}
+                <option value="{{autor.id_autor}}">
+                    {{autor.nombre_autor}}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <p>Genero</p>
+        <select name="genero">
+            {% for genero in consulta_genero %}
+                <option value="{{genero.id_genero}}">
+                    {{genero.nombre_genero}}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+    <br>
+    <input type="hidden" name="id_libro" value="{{libro.id_libro}}">
+    <input class="buttons" type="submit" value="Editar Libro">
+</form>
+{% endblock %}
